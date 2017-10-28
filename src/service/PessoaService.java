@@ -1,8 +1,8 @@
 package service;
 
-import javax.websocket.server.PathParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.google.gson.Gson;
@@ -10,11 +10,11 @@ import com.google.gson.Gson;
 import entity.Pessoa;
 import persistence.PessoaDao;
 
-@Path("pessoa")
+@Path("/pessoa")
 public class PessoaService {
 
 	@GET
-	@Path("gravar/{nome}/{sexo}/{idade}")
+	@Path("/gravar/{nome}/{sexo}/{idade}")
 	@Produces("text/plain")
 	public String gravar(@PathParam("nome") String nome, @PathParam("sexo") String sexo,
 			@PathParam("idade") String idade) {
