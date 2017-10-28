@@ -1,0 +1,8 @@
+http://localhost:8080/ServAngular/json/pessoa/listar
+http://localhost:8080/ServAngular/json/pessoa/excluir/6
+http://localhost:8080/ServAngular/json/pessoa/gravar/ney/m/39
+http://localhost:8080/ServAngular/json/pessoa/listar/1
+
+
+montagem do caminho
+projeto/{nome definido no url-pattern do web.xml}/{rota da classe do serviço}/{rota do método}
