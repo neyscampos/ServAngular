@@ -80,4 +80,24 @@ public class PessoaService {
 
 		}
 	}
+	
+	@GET
+	@Path("/alterar/{nome}/{sexo}/{idade}/{codigo}")
+	@Produces("text/plain")
+	public String alterar(@PathParam("nome") String nome, @PathParam("sexo") String sexo,
+			@PathParam("idade") String idade, @PathParam("codigo") String codigo) {
+
+		try {
+			Pessoa p = new Pessoa(Integer.parseInt(codigo), nome, sexo, Integer.parseInt(idade));
+			PessoaDao dao = new PessoaDao();
+
+			dao.update(p);
+
+			return "Dados alterados...";
+
+		} catch (Exception e) {
+			return "Error: " + e.getMessage();
+
+		}
+	}
 }

@@ -87,4 +87,21 @@ public class PessoaDao extends Dao {
 		}
 
 	}
+	
+	public void update(Pessoa p) throws Exception {
+		open();
+		try {
+			stmt = con.prepareStatement("update pessoa set nome = ?, sexo = ?, idade = ? "+
+					" where codigo=?"); 
+			stmt.setString(1, p.getNome());
+			stmt.setString(2, p.getSexo());
+			stmt.setInt(3, p.getIdade());
+			stmt.setInt(4, p.getCodigo());
+			stmt.execute();
+
+		} finally {
+			close();
+		}
+
+	}
 }
